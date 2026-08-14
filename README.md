@@ -65,7 +65,7 @@ pip install -r requirements.txt
 
 ### 5. Add Model Files
 
-Download the following files from the [Releases](../../releases) page:
+Download the following files from the [Releases](https://github.com/grishmas47/captionary_image_captioning/releases) page:
 
 * `checkpoint`
 * `ckpt-100.index`
@@ -98,4 +98,19 @@ http://127.0.0.1:5000/
 2. Upload an image.
 3. Click **Generate Caption**.
 4. View the generated caption.
+
+## Dataset and Evaluation
+
+The model was trained on the **MS COCO dataset**, containing over **80,000 annotated images**. It was evaluated using the **BLEU metric**, achieving:
+
+* **BLEU-1:** 0.4411
+* **BLEU-2:** 0.1644
+* **BLEU-3:** 0.0552
+* **BLEU-4:** 0.0268
+
+The results show that the model can recognize key visual elements and generate meaningful captions.
+
+## Limitation
+
+The model performs better on simple scenes but may generate less accurate or less fluent captions for complex images with multiple objects and relationships. The low **BLEU-4 score of 0.0268** also indicates limited phrase-level fluency.
 
