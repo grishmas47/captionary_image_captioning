@@ -1,53 +1,74 @@
 # Captionary
 
-Captionary is an image captioning system that generates descriptive captions for uploaded images using ResNet50, LSTM, and an attention mechanism.
+Captionary is an image captioning system that generates descriptive captions for images using **ResNet50**, **LSTM**, and an **attention mechanism**. The project uses a **Flask web interface** for image upload and caption generation.
 
 ## Technologies Used
 
-- Python
-- TensorFlow / Keras
-- ResNet50
-- LSTM
-- Flask
-- MS COCO Dataset
+* Python
+* TensorFlow / Keras
+* ResNet50
+* LSTM
+* Attention Mechanism
+* Flask
+* MS COCO 2014 Dataset
 
 ## Setup
 
 ### 1. Clone the repository
 
+```bash
 git clone <repository-url>
 cd <repository-folder>
+```
 
 ### 2. Create a virtual environment
 
+```bash
 python -m venv venv
+```
 
-Activate it:
+### 3. Activate the virtual environment
+
+**Windows**
+
+```bash
 venv\Scripts\activate
+```
 
-### 3. Install dependencies
+**macOS/Linux**
 
+```bash
+source venv/bin/activate
+```
+
+### 4. Install dependencies
+
+```bash
 pip install -r requirements.txt
+```
 
-### 4. Add the trained model files
+### 5. Add Model Files
 
-Place the trained model/checkpoint and tokenizer files in their required directories.
+Place the trained model/checkpoint files and tokenizer in the required project folders before running the application.
 
-### 5. Run the application
+### 6. Run the Application
 
-python <main-flask-file>.py
+```bash
+python app.py
+```
 
-Open the local URL shown in the terminal in your browser.
+Open:
+
+```text
+http://127.0.0.1:5000/
+```
 
 ## How to Use
 
 1. Open the application in your browser.
 2. Upload an image.
 3. Click **Generate Caption**.
-4. The system processes the image using ResNet50.
-5. The LSTM decoder generates a caption.
-6. The generated caption is displayed with the uploaded image.
+4. The generated caption will be displayed with the uploaded image.
 
-## Model
+The model uses ResNet50 for feature extraction and an LSTM-based decoder with attention to generate captions. Beam search is used during inference.
 
-The system uses ResNet50 for extracting image features and an LSTM-based decoder with attention to generate captions word by word. Beam search is used during inference to improve caption generation.
